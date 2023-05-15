@@ -1,3 +1,5 @@
+/* desktop screen */
+
 html,
 body {
   padding: 0;
@@ -11,7 +13,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: 0.1fr repeat(2, 1fr) 0.1fr;
-  grid-template-rows: repeat(3, 0.75fr);
+  grid-template-rows: 0.75fr repeat(2, 0.5fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   gap: 10px;
@@ -58,6 +60,43 @@ body {
 .content {
   font-size: 1.25rem;
 }
+
 li {
   margin-left: 10px;
+}
+
+/* small screen */
+
+@media screen and (max-width: 800px) {
+  .container {
+    display: grid;
+    grid-template-columns: 0.1fr 1fr 0.1fr;
+    grid-template-rows: 0.5fr repeat(4, 0.5fr);
+    gap: 20px;
+  }
+  .header {
+    grid-area: 1 / 2 / 2 / 3;
+    font-size: 2rem;
+  }
+  .section1 {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .section2 {
+    grid-area: 3 / 2 / 4 / 3;
+  }
+  .section3 {
+    grid-area: 4 / 2 / 5 / 3;
+  }
+  .section4 {
+    grid-area: 5 / 2 / 6 / 3;
+  }
+  .toolbar {
+    gap: 20px;
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  .title {
+    font-size: 1.75rem;
+    text-align: center;
+  }
 }
